@@ -79,11 +79,7 @@ class openstack_project::base(
     }
 
     realize (
-      User::Virtual::Localuser['mordred'],
-      User::Virtual::Localuser['corvus'],
-      User::Virtual::Localuser['clarkb'],
-      User::Virtual::Localuser['fungi'],
-      User::Virtual::Localuser['slukjanov'],
+      User::Virtual::Localuser['jrosenboom'],
     )
   }
 
