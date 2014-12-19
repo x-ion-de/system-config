@@ -85,10 +85,15 @@ class openstack_project::puppetmaster (
     ensure  => present,
     owner   => 'root',
     group   => 'root',
-    mode    => '0555',
+    mode    => '0444',
     source  => 'puppet:///modules/openstack_project/puppetmaster/hiera.yaml',
     replace => true,
     require => Class['openstack_project::server'],
+  }
+
+  file { '/etc/hiera.yaml':
+    ensure  => 'link',
+    target  => '/etc/puppet/hiera.yaml',
   }
 
   file { '/var/lib/puppet/reports':
@@ -117,7 +122,7 @@ class openstack_project::puppetmaster (
     owner  => 'root',
     group  => 'admin',
     mode   => '0750',
-    }
+  }
 
 # For puppet master apache serving.
   package { 'puppetmaster-passenger':
