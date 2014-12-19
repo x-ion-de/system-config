@@ -9,4 +9,12 @@ class openstack_project::users {
     gid      => 2000,
   }
 
+  @user::virtual::localuser { 'jklare':
+    realname => 'Jan Klare',
+    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/tIv/7WG7D5qNDE5GE2GF1ZkAja1sSYRomcIa77yV8Dvx3xH7ReT8wpaLYypNt5NumQPWOCRGdItcmhvFHWzPm1AwN5oW5tb7+XYGdra//nUQ5ARXAQx7PkRjnLXyQsXGEgzPqVRIprtYGWO4vbRXCfNNn1HhoikgPJB/pbEbUN2wHSYGKi21vzF+aDTYVeETWOiR1sqHUc6HgTGV0fGyHAfy7UQxmr0j94UBCy6B/CLRTe5U/8M73XVPTfHOKD5jeBbcZODR0n8EZXGSHLdD8jRTa2/oFcgqn5wZSgHseAorTDs0aPYFSSUTflvTbilWip7i0wg8AdLAEw7JnIfx',
+    key_id   => 'jklare@jklare-VirtualBox',
+    uid      => 2001,
+    gid      => 2001,
+  }
+
 }

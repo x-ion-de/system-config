@@ -29,9 +29,11 @@ class openstack_project::users_install (
     }
     realize (
       User::Virtual::Localuser['jrosenboom'],
+      User::Virtual::Localuser['jklare'],
     )
   } else {
       user::virtual::disable{'jrosenboom':}
+      user::virtual::disable{'jklare':}
   }
 }
 
