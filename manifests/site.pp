@@ -24,7 +24,7 @@ node default {
 # Node-OS: precise
 node 'review.openstack-ci.berlin.x-ion.de' {
   class { 'openstack_project::review':
-    project_config_repo                 => 'https://git.openstack-ci.berlin.x-ion.de/openstack-infra/project-config',
+    project_config_repo                 => 'https://gitlab.x-ion.de/openstack/project-config',
     github_oauth_token                  => hiera('gerrit_github_token', 'XXX'),
     github_project_username             => hiera('github_project_username', 'username'),
     github_project_password             => hiera('github_project_password', 'XXX'),
@@ -61,7 +61,7 @@ node 'review.openstack-ci.berlin.x-ion.de' {
 # Node-OS: precise
 node 'jenkins.openstack-ci.berlin.x-ion.de' {
   class { 'openstack_project::jenkins':
-    project_config_repo     => 'https://git.openstack-ci.berlin.x-ion.de/openstack-infra/project-config',
+    project_config_repo     => 'https://gitlab.x-ion.de/openstack/project-config',
     jenkins_jobs_password   => hiera('jenkins_jobs_password', 'XXX'),
     jenkins_ssh_private_key => hiera('jenkins_ssh_private_key_contents', 'XXX'),
     ssl_cert_file_contents  => hiera('jenkins_ssl_cert_file_contents', 'XXX'),
@@ -146,7 +146,7 @@ node 'etherpad-dev.openstack-ci.berlin.x-ion.de' {
 # Node-OS: precise
 node 'zuul.openstack-ci.berlin.x-ion.de' {
   class { 'openstack_project::zuul_prod':
-    project_config_repo            => 'https://git.openstack-ci.berlin.x-ion.de/openstack-infra/project-config',
+    project_config_repo            => 'https://gitlab.x-ion.de/openstack/project-config',
     gerrit_server                  => 'review.openstack-ci.berlin.x-ion.de',
     gerrit_user                    => 'jenkins',
     gerrit_ssh_host_key            => hiera('gerrit_ssh_rsa_pubkey_contents', 'XXX'),
@@ -195,31 +195,6 @@ node /^zm\d+\.openstack-ci\.berlin\.x-ion\.de$/ {
     gerrit_ssh_host_key  => hiera('gerrit_ssh_rsa_pubkey_contents', 'XXX'),
     zuul_ssh_private_key => hiera('zuul_ssh_private_key_contents', 'XXX'),
     sysadmins            => hiera('sysadmins', []),
-  }
-}
-
-# Node-OS: precise
-node 'zuul-dev.openstack-ci.berlin.x-ion.de' {
-  class { 'openstack_project::zuul_dev':
-    project_config_repo  => 'https://git.openstack-ci.berlin.x-ion.de/openstack-infra/project-config',
-    gerrit_server        => 'review-dev.openstack-ci.berlin.x-ion.de',
-    gerrit_user          => 'zuul-dev',
-    zuul_ssh_private_key => hiera('zuul_dev_ssh_private_key_contents', 'XXX'),
-    url_pattern          => 'http://logs.openstack-ci.berlin.x-ion.de/{build.parameters[LOG_PATH]}',
-    zuul_url             => 'http://zuul-dev.openstack-ci.berlin.x-ion.de/p',
-    sysadmins            => hiera('sysadmins', []),
-    statsd_host          => 'graphite.openstack-ci.berlin.x-ion.de',
-    gearman_workers      => [
-      'jenkins.openstack-ci.berlin.x-ion.de',
-      'jenkins01.openstack-ci.berlin.x-ion.de',
-      'jenkins02.openstack-ci.berlin.x-ion.de',
-      'jenkins03.openstack-ci.berlin.x-ion.de',
-      'jenkins04.openstack-ci.berlin.x-ion.de',
-      'jenkins05.openstack-ci.berlin.x-ion.de',
-      'jenkins06.openstack-ci.berlin.x-ion.de',
-      'jenkins07.openstack-ci.berlin.x-ion.de',
-      'jenkins-dev.openstack-ci.berlin.x-ion.de',
-    ],
   }
 }
 
