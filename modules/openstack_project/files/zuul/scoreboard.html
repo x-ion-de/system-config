@@ -52,7 +52,7 @@
       Affecting projects: ${', '.join(bug.projects)}<br/>
       Affecting changes:
       <span py:for="i, change in enumerate(bug.changes)">
-        <a href="https://review.openstack.org/${change}"
+        <a href="https://review.openstack-ci.berlin.x-ion.de/${change}"
            >${change}</a><span py:if="i+1 != len(bug.changes)" py:replace="','"/>
       </span>
     </div>

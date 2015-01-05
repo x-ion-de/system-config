@@ -109,7 +109,7 @@ node 'jenkins-dev.openstack-ci.berlin.x-ion.de' {
 }
 
 # Node-OS: precise
-node 'puppetmaster.openstack-ci.berlin.x-ion.de' {
+node 'puppet-master.openstack-ci.berlin.x-ion.de' {
   class { 'openstack_project::puppetmaster':
     root_rsa_key => hiera('puppetmaster_root_rsa_key', 'XXX'),
     sysadmins    => hiera('sysadmins', []),
@@ -148,11 +148,11 @@ node 'zuul.openstack-ci.berlin.x-ion.de' {
   class { 'openstack_project::zuul_prod':
     project_config_repo            => 'https://github.com/x-ion-de/project-config',
     gerrit_server                  => 'review.openstack-ci.berlin.x-ion.de',
-    gerrit_user                    => 'jenkins',
+    gerrit_user                    => 'zuul',
     gerrit_ssh_host_key            => hiera('gerrit_ssh_rsa_pubkey_contents', 'XXX'),
     zuul_ssh_private_key           => hiera('zuul_ssh_private_key_contents', 'XXX'),
     url_pattern                    => 'http://logs.openstack-ci.berlin.x-ion.de/{build.parameters[LOG_PATH]}',
-    swift_authurl                  => 'https://identity.api.rackspacecloud.com/v2.0/',
+    swift_authurl                  => 'https://tbd.x-ion.de/v2.0/',
     swift_user                     => 'infra-files-rw',
     swift_key                      => hiera('infra_files_rw_password', 'XXX'),
     swift_tenant_name              => hiera('infra_files_tenant_name', 'tenantname'),
@@ -163,25 +163,7 @@ node 'zuul.openstack-ci.berlin.x-ion.de' {
     sysadmins                      => hiera('sysadmins', []),
     statsd_host                    => 'graphite.openstack-ci.berlin.x-ion.de',
     gearman_workers                => [
-      'nodepool.openstack-ci.berlin.x-ion.de',
-      'nodepool-dev.openstack-ci.berlin.x-ion.de',
-      'jenkins.openstack-ci.berlin.x-ion.de',
-      'jenkins01.openstack-ci.berlin.x-ion.de',
-      'jenkins02.openstack-ci.berlin.x-ion.de',
-      'jenkins03.openstack-ci.berlin.x-ion.de',
-      'jenkins04.openstack-ci.berlin.x-ion.de',
-      'jenkins05.openstack-ci.berlin.x-ion.de',
-      'jenkins06.openstack-ci.berlin.x-ion.de',
-      'jenkins07.openstack-ci.berlin.x-ion.de',
-      'jenkins-dev.openstack-ci.berlin.x-ion.de',
-      'zm01.openstack-ci.berlin.x-ion.de',
-      'zm02.openstack-ci.berlin.x-ion.de',
-      'zm03.openstack-ci.berlin.x-ion.de',
-      'zm04.openstack-ci.berlin.x-ion.de',
-      'zm05.openstack-ci.berlin.x-ion.de',
-      'zm06.openstack-ci.berlin.x-ion.de',
-      'zm07.openstack-ci.berlin.x-ion.de',
-      'zm08.openstack-ci.berlin.x-ion.de',
+      # 'jenkins01.openstack-ci.berlin.x-ion.de',
     ],
   }
 }
