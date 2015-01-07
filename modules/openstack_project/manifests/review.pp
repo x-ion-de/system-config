@@ -137,7 +137,7 @@ class openstack_project::review (
     replication                         => [
       {
         name                 => 'gitlab',
-        url                  => 'gerrit@gitlab.x-ion.de:',
+        url                  => 'git@gitlab.x-ion.de:',
         #authGroup            => 'Anonymous Users',
         replicationDelay     => '1',
         replicatePermissions => false,
