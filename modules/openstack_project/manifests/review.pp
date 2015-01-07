@@ -104,7 +104,7 @@ class openstack_project::review (
     ssh_replication_rsa_pubkey_contents => $ssh_replication_rsa_pubkey_contents,
     ssh_welcome_rsa_key_contents        => $ssh_welcome_rsa_key_contents,
     ssh_welcome_rsa_pubkey_contents     => $ssh_welcome_rsa_pubkey_contents,
-    email                               => 'review@openstack.org',
+    email                               => 'gerrit@x-ion.de',
       # 1 + 100 + 9 + 2 + 2 + 25 => 139(rounded up)
     database_poollimit                  => '150',
     container_heaplimit                 => '8g',
@@ -136,9 +136,9 @@ class openstack_project::review (
     swift_password                      => $swift_password,
     replication                         => [
       {
-        name                 => 'github',
-        url                  => 'git@github.com:',
-        authGroup            => 'Anonymous Users',
+        name                 => 'gitlab',
+        url                  => 'gerrit@gitlab.x-ion.de:',
+        #authGroup            => 'Anonymous Users',
         replicationDelay     => '1',
         replicatePermissions => false,
         mirror               => true,
@@ -146,41 +146,6 @@ class openstack_project::review (
       {
         name                 => 'local',
         url                  => 'file:///opt/lib/git/',
-        replicationDelay     => '1',
-        threads              => '4',
-        mirror               => true,
-      },
-      {
-        name                 => 'git01',
-        url                  => 'cgit@git01.openstack.org:/var/lib/git/',
-        replicationDelay     => '1',
-        threads              => '4',
-        mirror               => true,
-      },
-      {
-        name                 => 'git02',
-        url                  => 'cgit@git02.openstack.org:/var/lib/git/',
-        replicationDelay     => '1',
-        threads              => '4',
-        mirror               => true,
-      },
-      {
-        name                 => 'git03',
-        url                  => 'cgit@git03.openstack.org:/var/lib/git/',
-        replicationDelay     => '1',
-        threads              => '4',
-        mirror               => true,
-      },
-      {
-        name                 => 'git04',
-        url                  => 'cgit@git04.openstack.org:/var/lib/git/',
-        replicationDelay     => '1',
-        threads              => '4',
-        mirror               => true,
-      },
-      {
-        name                 => 'git05',
-        url                  => 'cgit@git05.openstack.org:/var/lib/git/',
         replicationDelay     => '1',
         threads              => '4',
         mirror               => true,
