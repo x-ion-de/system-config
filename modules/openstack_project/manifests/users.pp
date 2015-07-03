@@ -39,36 +39,12 @@ class openstack_project::users {
     gid      => 2002,
   }
 
-  @user::virtual::localuser { 'oubiwann':
-    realname => 'Duncan McGreggor',
-    sshkeys  => 'AAAAB3NzaC1yc2EAAAABIwAAAQEAttca0Lahzo1rskWcCGwYh71ADmUsn/6RNBd7H7WVsX+QTacq90fpNghFNTen4I7tC1p0IemwHcCOb1noeXkjxl7W5r7l0OhiqMHp/u2ao0F3dINryuNEww2IHRhY6GwwGJ+slv+i4/FviUgqHZVzopUon/9VY0mu1wfu3vTRw0qXsvqr09Jiavt/8gJ0Fa5PsYkf7l0edFk0scTmGp3G4HY/ZvnbChfZMg6L/xcGPtK/GbLYg6PGtLVVnubXMtxD9GZYhwrY0i9Z2egcRI2W7IznM4OGFzYgA9HZqylPoWt4+ghzC5azUlbO2u6+8HigJVblAGHRWcznEf/ZDR3erw==',
-    key_id   => 'oubiwann@rhosgobel',
-    uid      => 2003,
-    gid      => 2003,
-  }
-
-  @user::virtual::localuser { 'rockstar':
-    realname => 'Paul Hummer',
-    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDd4dPOAooCImpPulKIH82LqahC2wtQAZS/bFjNRpEILaYQMPCEpSMpjQmhcjdq+OBtsHMbqkSR+ZEoDrkhsI3Y6NVyTlGeFfwCPNNt2VeuJlKqRHUxxecp0IPWGSNl+YI5rjO5hTIZEo9T+hngX2b4k7aPm/naGcBVETMdYDZt9yhX37w5irRFdMfNDdSa3VfrhqV3Jjge/sXA5Tv35s0O6R55Ww5KfZRTpAMesHWkH9ch6xaHgexLNyCtekZQKNRLR5FCk1SYdcV+BJNlmiyjH4Ed+Oy/dFlGWPNARGwNgEWbInROEqXdWvQf+ZAfuwo32umVmmPhFrBxDYrFR1Gp',
-    key_id   => 'rockstar@spackrace.local',
-    uid      => 2004,
-    gid      => 2004,
-  }
-
   @user::virtual::localuser { 'clarkb':
     realname => 'Clark Boylan',
     sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDlH6SNieyGDWNl4b9TM+zUgk+XTXRtqxyYxNh1p5e00u/ZrZPVrc7buPhnTHzEde0ABX0vgnZI2rC5Hf9cYY0aRgLHDuikQ4CQHPucslgZ5linjtWx5AuURp+oaJRCj00UZubJsatUx5vz+D4MGRLYmL+MErftYdI4sBbolATfLVwjrmxsd6KF1BZ0+9eEv2Xrk+yXN1A5RGPKBiuE6viDMZxrOuy7IW8+TQZW1LrsbTCAD1b+J5Nx0z/Hn3Rz71zEibdwM9xgu5vROu3p9kdaxu+Ndg/SvCCWlzoLQSeIAmcfGUlWg9IjEc3sQexX9BmUAsKQtu3aZFgq2V7aqtDN',
     key_id   => 'boylandcl@boylancl1',
     uid      => 2005,
     gid      => 2005,
-  }
-
-  @user::virtual::localuser { 'rlane':
-    realname => 'Ryan Lane',
-    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCdtI7H+fsgSrjrdG8aGVcrN0GFW3XqLVsLG4n7JW4qH2W//hqgdL7A7cNVQNPoB9I1jAqvnO2Ct6wrVSh84QU89Uufw412M3qNSNeiGgv2c2KdxP2XBrnsLYAaJRbgOWJX7nty1jpO0xwF503ky2W3OMUsCXMAbYmYNSod6gAdzf5Xgo/3+eXRh7NbV1eKPrzwWoMOYh9T0Mvmokon/GXV5PiAA2bIaQvCy4BH/BzWiQwRM7KtiEt5lHahY172aEu+dcWxciuxHqkYqlKhbU+x1fwZJ+MpXSj5KBU+L0yf3iKySob7g6DZDST/Ylcm4MMjpOy8/9Cc6Xgpx77E/Pvd',
-    key_id   => 'laner@Free-Public-Wifi.local',
-    uid      => 2006,
-    gid      => 2006,
   }
 
   @user::virtual::localuser { 'fungi':
@@ -103,38 +79,6 @@ class openstack_project::users {
     gid      => 2010,
   }
 
-  @user::virtual::localuser { 'mkiss':
-    realname => 'Marton Kiss',
-    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCb5qdaiKaRqBRgLW8Df+zD3C4a+gO/GFZYEDEd5nvk+LDGPuzi6s639DLqdfx6yvJ1sxxNUOOYhE/T7raDeS8m8fjk0hdVzARXraYDbckt6AELl7B16ZM4aEzjAPoSByizmfwIVkO1zP6kghyumV1kr5Nqx0hTd5/thIzgwdaGBY4I+5iqcWncuLyBCs34oTh/S+QFzjmMgoT86PrdLSsBIINx/4rb2Br2Sb6pRHmzbU+3evnytdlDFwDUPfdzoCaQEdXtjISC0xBdmnjEvHJYgmSkWMZGgRgomrA06Al9M9+2PR7x+burLVVsZf9keRoC7RYLAcryRbGMExC17skL',
-    key_id   => 'marton.kiss@gmail.com',
-    uid      => 2011,
-    gid      => 2011,
-  }
-
-  @user::virtual::localuser { 'smarcet':
-    realname => 'Sebastian Marcet',
-    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDP5ce0Ywtbgi3LGMZWA5Zlv/EQ07F/gWnZOMN6TRfiCiiBNyf8ARtKgmYSINS8W537HJYBt3qTfa5xkZmpBrtE6x8OTfR5y1L+x/PrLTUkQhVDY19EixD9wDIrQIIjo2ZVq+zErXBRQuGmJ3Hl+OGw+wtvGS8f768kMnwhKUgyITjWV2tKr/q88J8mBOep48XUcRhidDWsOjgIDJQeY2lbsx1bbZ7necrJS17PHqxhUbWntyR/VKKbBbrNmf2bhtTRUSYoJuqabyGDTZ0J25A88Qt2IKELy6jsVTxHj9Y5D8oH57uB7GaNsNiU+CaOcVfwOenES9mcWOr1t5zNOdrp',
-    key_id   => 'smarcet@gmail.com',
-    uid      => 2012,
-    gid      => 2012,
-  }
-
-  @user::virtual::localuser { 'zaro':
-    realname => 'Khai Do',
-    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDJqB//ilMx7Y1tKzviAn/6yeXSRAi2VnaGN0/bfaa5Gciz+SWt8vAEAUE99fzuqeJ/ezjkuIXDFm/sjZr93y567a6sDT6CuhVUac1FZIhXRTs0J+pBOiENbwQ7RZxbkyNHQ0ndvtz3kBA1DF5D+MDkluBlIWb085Z31rFJmetsB2Zb8s1FKUjHVk/skyeKSj0qAK5KN3Wme6peWhYjwBiM0gUlxIsEZM6JLYdoPIbD5B8GYAktMN2FvJU9LgKGL93jLZ/vnMtoQIHHAG/85NdPURL1Zbi92Xlxbm4LkbcHnruBdmtPfSgaEupwJ+zFmK264OHD7QFt10ztPMbAFCFn',
-    key_id   => 'khaido@khaido-HP-EliteBook-Folio-9470m',
-    uid      => 2013,
-    gid      => 2013,
-  }
-
-  @user::virtual::localuser { 'slukjanov':
-    realname => 'Sergey Lukjanov',
-    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDHGuIVB/WxBd7k1R8x2FyfqT6KxRnoM7lE5RE8gvBk2r8cQeH5k1c+P5JrBvWpmqXv4satoivYOBiIb7JXEgIxx62YUx/JQ0J7k3w+av6h4iFe2OhOtEOjMF5F8/wO8a/95OeTZPzBZlUfA3hx754kuw3Q/aBKQUOHWxJOIedGyVHeJc7XiFj3RXIufFuUfng9+p4Z3q6d2/WpuKqs00WI0CLF17PkU4i8P9CraJR1dmsWW6zoxMT2G+DwMFI7ZMS3xrVBRuLwrLlbylVLW2kOJ0JeyjHnRh7X1kR7KG3cGOOjA1YQ0e+mXvremcO3/3o6Iop/N1AtqVuYCKlZc7Y9',
-    key_id   => 'slukjanov@mirantis.com',
-    uid      => 2014,
-    gid      => 2014,
-  }
-
   @user::virtual::localuser { 'elizabeth':
     realname => 'Elizabeth K. Joseph',
     sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDL9x1rhTVOEQEanrN+ecycaDtAbbh3kr41Rxx7galtLq0JwftjsZqv2Vwl9c8ARmm8HiHcLwDoaZB9gvs6teMScCB+5a1fcohiycJBl2olNFRzkGapDaTvl74aLXQBWaV84D8tUavEl26zcgwrv9WLUsy9pnHoo5K0BzbK7vT2g3VictCphveC2vdjCDeptocWvt4zxCmAY6O7QMKeUjKMlvuy+zCohJcR4BbDnw8EriFAmCeQZcAgfLTyeAvjo384NNIFWyhCwvbCLvpgTplMCp896DWLlXu9eaGUCNjT/sZM8zafAXbfc6OKYFQ5iANAiJktWwKaUaphJkbSVWT5',
@@ -149,6 +93,22 @@ class openstack_project::users {
     key_id   => 'jhesketh@infra',
     uid      => 2016,
     gid      => 2016,
+  }
+
+  @user::virtual::localuser { 'jklare':
+    realname => 'Jan Klare',
+    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/tIv/7WG7D5qNDE5GE2GF1ZkAja1sSYRomcIa77yV8Dvx3xH7ReT8wpaLYypNt5NumQPWOCRGdItcmhvFHWzPm1AwN5oW5tb7+XYGdra//nUQ5ARXAQx7PkRjnLXyQsXGEgzPqVRIprtYGWO4vbRXCfNNn1HhoikgPJB/pbEbUN2wHSYGKi21vzF+aDTYVeETWOiR1sqHUc6HgTGV0fGyHAfy7UQxmr0j94UBCy6B/CLRTe5U/8M73XVPTfHOKD5jeBbcZODR0n8EZXGSHLdD8jRTa2/oFcgqn5wZSgHseAorTDs0aPYFSSUTflvTbilWip7i0wg8AdLAEw7JnIfx',
+    key_id   => 'jklare@jklare-VirtualBox',
+    uid      => 3001,
+    gid      => 3001,
+  }
+
+  @user::virtual::localuser { 'jrosenboom':
+    realname => 'Jens Rosenboom',
+    sshkeys  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCxBkH6rMEVEwWaysNK5tbsOycdl4X7S7sRlkZcKiuT16yUAQNv6K9iFnEYXIPqMDx3Yj/7J7aeLwzPaHixUMFrdpl8O3IbiII+DOc3YFkaIAyuHa+D7dp2otwgeA+730ELE2h0eBfcmejg9um2gZtkHo6M3GJP9Wn9v1Vt/xNNDeBWpGqLC2JClASiEtYCXvkgvv36XQN2dTnqKaVEbMkE1aHkD1dXxa5ugxeawgpETatvd5mRrv85HVgwfNe7sjIuxA1Y6wz1tT8vUMx0hmD8R5CVhwlTXNqbxrCl69CLxwOFHOkbwm6egbHiVgCTtRbM8dwlt+4gJ3FlJcCa9Ydb',
+    key_id   => 'jrosenboom@local',
+    uid      => 3002,
+    gid      => 3002,
   }
 
 }
